@@ -1,0 +1,23 @@
+{
+  "name": "chj-starter",
+  "version": "0.1.1",
+  "authors": [
+    "Christian Jánský"
+  ],
+  "description": "Bootstrap is so 2014.",
+  "license": "MIT",
+  "homepage": "http://www.chrisjansky.cz",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "normalize-css": "~3.0.2",
+    "jquery": "~2.1.1",
+    "chj-framework": "~0.5.5",
+    "waypoints": "~4.0.0"
+  }
+}
