@@ -1,0 +1,49 @@
+.t-head--top {
+  text-align: center;
+
+  font-size: em($ratio--xl);
+  font-family: $font__serif;
+  font-weight: $font__serif--regular;
+}
+
+.t-small {
+  font-size: em($unit--xs);
+}
+
+.t-smallcaps {
+  font-size: em($unit--xs);
+
+  text-transform: uppercase;
+  letter-spacing: em($ratio--xxs);
+}
+
+a {
+  @include state--all {
+    color: currentColor;
+  }
+}
+
+.t-link {
+  text-decoration: none;
+
+  position: relative;
+
+  &:after {
+    content: "";
+
+    @include position(absolute, 110% 0 null 0);
+
+    height: $line--s;
+
+    background-color: currentColor;
+    opacity: .25;
+
+    transition: top $duration--xs;
+  }
+  @include state--active {
+    &:after {
+      opacity: 1;
+      // top: 110%;
+    }
+  }
+}

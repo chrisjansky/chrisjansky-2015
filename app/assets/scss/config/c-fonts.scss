@@ -1,0 +1,44 @@
+// Families.
+$font__sans: "Reglo", sans-serif;
+$font__serif: "Bagnard", serif;
+$font__mono: "Apercu-Mono", monospace;
+
+// Weights.
+$font__sans--bold: bold;
+
+$font__serif--regular: normal;
+
+$font__mono--regular: normal;
+
+// Defaults.
+$default__size: $base-1;
+$default__family: $font__mono;
+$default__weight: $font__mono--regular;
+$default__leading: $spacing--b;
+
+@font-face {
+  font-family: "Bagnard";
+  src: url("../fonts/Bagnard-Regular.eot");
+  src: url("../fonts/Bagnard-Regular.eot?#iefix") format("embedded-opentype"),
+       url("../fonts/Bagnard-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Reglo";
+  src: url("../fonts/Reglo-Bold.eot");
+  src: url("../fonts/Reglo-Bold.eot?#iefix") format("embedded-opentype"),
+       url("../fonts/Reglo-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Apercu-Mono";
+  src: url("../fonts/apercu-mono-webfont.eot");
+  src: url("../fonts/apercu-mono-webfont.eot?#iefix") format("embedded-opentype"),
+       url("../fonts/apercu-mono-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}

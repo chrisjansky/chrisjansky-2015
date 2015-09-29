@@ -1,0 +1,55 @@
+// body {
+//   transition: background-color $duration--xl;
+// }
+
+// [class^="o-stamp--"],
+// [class*=" o-stamp--"] {
+//   margin-top: 0;
+
+//   transform: translateY(-50%);
+// }
+
+.o-hero {
+}
+.o-hero__content {
+  text-align: center;
+}
+.o-hero__text {
+  max-width: em(600);
+  @include margin(null auto);
+
+  margin-top: 40vh;
+}
+
+.o-mark {
+  color: inherit;
+  background: none;
+
+  display: block;
+  text-align: center;
+
+  margin-bottom: em($ratio--xl);
+}
+
+.o-list {
+  padding-left: 0;
+  list-style-type: none;
+
+  @include clearfix;
+
+  li {
+    position: relative;
+    padding-left: em($ratio--m);
+  }
+
+  li:before {
+    position: absolute;
+    left: 0;
+
+    content: "\b7\a0";
+  }
+}
+.o-list__item--2 {
+  @include span-columns(2 of 4);
+  @include omega(2n);
+}

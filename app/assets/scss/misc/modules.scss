@@ -1,0 +1,17 @@
+.m-profile__col--2 {
+  margin-right: 0;
+
+  margin-bottom: em($ratio--l);
+}
+.m-profile__col--3 {
+  @include shift(2 of $columns__desktop);
+}
+
+.m-bottom__col--1 {
+  @include shift(4 of $columns__desktop);
+
+  margin-bottom: em($ratio--xh);
+}
+.m-bottom__col--3 {
+  overflow: auto;
+}

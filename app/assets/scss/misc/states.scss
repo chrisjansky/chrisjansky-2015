@@ -1,0 +1,14 @@
+$sections: colours $c-colours $bg-colours, notebuuk $c-notebuuk $bg-notebuuk, bzenia-web $c-bzenia1 $bg-bzenia1, profile $c-profile $bg-profile, little-greta $c-little-greta $bg-little-greta, bzenia-id $c-bzenia2 $bg-bzenia2, bottom $c-bottom $bg-bottom;
+
+@each $section in $sections {
+  $i: index($sections, $section);
+
+  .section--#{nth($section, 1)} {
+    color: nth($section, 2);
+    background-color: nth($section, 3);
+
+    .o-stamp {
+      top: $i * 6 + 20%;
+    }
+  }
+}
