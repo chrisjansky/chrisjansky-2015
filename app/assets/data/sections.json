@@ -1,0 +1,38 @@
+{
+  "sections": [
+    {
+      "slug": "colours",
+      "name": "Colours of Ostrava",
+      "info": "An energetic teaser for this year's music festival.",
+      "category": "Motion Design"
+    },
+    {
+      "slug": "notebuuk",
+      "name": "Paper is Bliss",
+      "info": "Notebooks done differently.",
+      "category": "Concept, Identity, Web-dev"
+    },
+    {
+      "slug": "bzenia-web",
+      "name": "Wine at Your Door",
+      "info": "An online store for a craft winery.",
+      "category": "UX, UI, Web-dev"
+    },
+    {
+      "slug": "profile",
+      "name": "Design + Code"
+    },
+    {
+      "slug": "little-greta",
+      "name": "A Little but Great Web",
+      "info": "Agency website.",
+      "category": "UX, UI, Web-dev"
+    },
+    {
+      "slug": "bzenia-id",
+      "name": "New Bottle on the Block",
+      "info": "New bottle design.",
+      "category": "Concept, Identity"
+    }
+  ]
+}
