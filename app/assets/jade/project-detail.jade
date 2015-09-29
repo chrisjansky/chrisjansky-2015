@@ -1,0 +1,20 @@
+extends templates/_site
+
+block template-content
+  header.o-header.l-wrap
+    .l-inline
+      .l-inline__cell
+        strong.o-logo Portfolio of Christian Jánský
+      .l-inline__cell
+        nav.o-nav
+          ul.o-nav__list.o-dotlist--inline
+            li
+              a(href="#") Profile
+            li
+              a(href="#") Contact
+
+  .l-wrap
+    - var imagesCount = 9
+    while imagesCount > 0
+      img(src="assets/images/amag#{imagesCount}.jpg", alt="Project Image")
+      - imagesCount--

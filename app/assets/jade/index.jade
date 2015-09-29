@@ -1,0 +1,73 @@
+extends templates/_site
+
+block template-content
+  header.o-header.l-wrap(data-header)
+    .o-header__content.l-inline
+      .l-inline__cell
+        strong.o-logo CHJ
+      .l-inline__cell
+        nav.o-nav
+          ul.o-nav__list
+            li.o-nav__item
+              a.o-nav__link.t-link(href="#profile") Profile
+            li.o-nav__item
+              a.o-nav__link.t-link(href="#contact") Contact
+
+  section.o-hero(data-section, data-stamp="Dots, Lines & Semicolons", data-slug="top")
+    .o-hero__content.l-wrap
+      h1#js-stamp.o-stamp.t-head--top Dots, Lines &amp; Semicolons
+      p.o-hero__text Portfolio of Christian Jánský, a&nbsp;designer working in paper- and pixel-based media.
+      span.t-smallcaps Selection of projects&emsp;2014&thinsp;&ndash;&thinsp;2015
+
+  each item, index in sections
+    if item.slug == "profile"
+      section(data-section, data-stamp=item.name, data-slug=item.slug)
+        mark.o-mark.t-smallcaps Profile
+        .m-profile.l-wrap
+          .m-profile__col--1.l-grid__item--s
+            span About
+          .m-profile__col--2.l-grid__item--xl
+            p I like to combine traditional graphic design with digital interventions and empower it by thoughtful use of motion &amp; interaction. I believe in clarity using means of typography, structure and rhythm. Automation and facilitation of design through clever use of code is something I am deeply passionate about.
+          .m-profile__col--3.l-grid__item--m
+            span Key Interests
+            ul.o-list
+              li UI design
+              li Interaction design
+              li Typography
+              li Rapid prototyping
+              li Front-end development
+              li Wordpress integration
+              li DIY Screen printing
+          .m-profile__col--4.l-grid__item--m
+            span Favourite Tools
+            ul.o-list
+              li.o-list__item--2 Paper
+              li.o-list__item--2 Sketch
+              li.o-list__item--2 Gulp
+              li.o-list__item--2 Jade
+              li.o-list__item--2 SCSS
+              li.o-list__item--2 Processing.js
+              li.o-list__item--2 GitHub
+    else
+      mark.o-mark.t-smallcaps= index + 1
+      article.o-work(class="o-work--#{item.slug}", data-section, data-stamp=item.name, data-slug=item.slug)
+        a.o-work__link(href="project-detail")
+          img.o-work__thumb(class="o-work__thumb--#{item.slug}", src="http://unsplash.it/960/600/?image=#{index + 15 * 45}", alt="unsplash.it")
+        .o-work__caption
+          p.o-work__info= item.info
+          span.o-work__category.t-smallcaps= item.category
+
+  section(data-section, data-stamp="Let’s Work Together", data-slug="bottom")
+    mark.o-mark.t-smallcaps Contact
+    .l-wrap
+      .m-bottom__col--1
+        p Currently about to finish Master&rsquo;s in Digital design, curious for new opportunities. If I seem like a&nbsp;good fit for your team, please 
+          a.t-link(href="#") Get in touch
+          |  &mdash; I&rsquo;ll be happy to discuss possible collaborations.
+      .m-bottom__col--2.l-grid__item--m
+        span.t-small Designed &amp; developed by Christian Jánský, 2015
+      .m-bottom__col--3
+        span.t-smallcaps Thanks for scrolling!
+        p.t-small To see selection of projects I&rsquo;ve made in 2012&thinsp;&ndash;&thinsp;2013, please 
+          a.t-link(href="http://www.chrisjansky.cz/2013/") See my previous portfolio
+          | .
