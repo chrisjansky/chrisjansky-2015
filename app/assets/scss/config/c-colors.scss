@@ -34,18 +34,18 @@ $grey--900: hsb($neutral-1, 20, 07);
 $c-select__bg:   $grey--900;
 $c-select__text: $grey--400;
 
-$c-colours:      #39bf9e;
-$c-notebuuk:     #fff799;
-$c-bzenia1:      #ff8c96;
-$c-bzenia2:      #ff8c96;
-$c-little-greta: #2681ff;
+$c-colours:      hsb(165, 95, 75);
+$c-notebuuk:     hsb(15, 40, 100);
+$c-bzenia1:      hsb(80, 85, 80);
+$c-bzenia2:      hsb(325, 70, 85);
+$c-little-greta: hsb(225, 85, 100);
 $c-profile:      white;
 $c-bottom:       black;
 
-$bg-colours:      #e9fbed;
-$bg-notebuuk:     #0b274d;
-$bg-bzenia1:      #222426;
-$bg-bzenia2:      #661444;
-$bg-little-greta: #edf2f7;
+$bg-colours:      hsb(135, 7, 98);
+$bg-notebuuk:     hsb(215, 85, 40);
+$bg-bzenia1:      hsb(205, 25, 15);
+$bg-bzenia2:      hsb(45, 6, 98);
+$bg-little-greta: hsb(210, 4, 98);
 $bg-profile:      $grey--600;
 $bg-bottom:       white;
