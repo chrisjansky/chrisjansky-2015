@@ -1,0 +1,77 @@
+extends templates/_site
+
+append template-variables
+  - var currentProject = sections[0]
+  - var nextProject = sections[1]
+
+block template-content
+  header.o-header.l-wrap
+    a(href="index").o-logo
+      .o-logo__variant
+        include ../svg/chj_logo_1b.svg
+      .o-logo__variant
+        include ../svg/chj_logo_1a.svg
+      .o-logo__variant
+        include ../svg/chj_logo_1c.svg
+    nav.o-nav#js-nav
+      ul.o-nav__list
+        li.o-nav__item
+          a.o-nav__link.t-link(href="index#section-profile") Profile
+        li.o-nav__item
+          a.o-nav__link.t-link(href="index#section-contact") Contact
+
+  main.o-intro.l-wrap(data-intro)
+    .o-intro__bg(class="bg--#{currentProject.slug}")
+      .o-intro__content
+        h1.o-intro__title.t-head--top= currentProject.name
+        p.o-intro__text!= currentProject.info
+
+  section.l-wrap.l-wrap--horizontal
+    .o-embed.o-embed--row
+      iframe(src="//player.vimeo.com/video/118933603?color=0abf92&portrait=0", width="800", height="450", frameborder="0", webkitallowfullscreen, mozallowfullscreen, allowfullscreen)
+    .o-row
+      img.o-image--b(src="assets/images/#{currentProject.slug}/colours_b1.png", alt="#{currentProject.name} image")
+      img.o-image--b(src="assets/images/#{currentProject.slug}/colours_b2.png", alt="#{currentProject.name} image")
+    if currentProject.description
+      .o-description
+        each paragraph in currentProject.description
+          p!= paragraph
+        a.o-button--inline(href="https://vimeo.com/118933603", class="bg--#{currentProject.slug}")
+          span.o-button__text
+            span.o-flash__one Watch Teaser 
+            span.o-flash__two in HD
+    img.o-image--m.o-image--m-shift(src="assets/images/#{currentProject.slug}/colours_m1.png", alt="#{currentProject.name} image")
+    if currentProject.note
+      .o-note
+        each note in currentProject.note
+          p.t-small!= note
+    .o-row
+      img.o-image--b(src="assets/images/#{currentProject.slug}/colours_b3.png", alt="#{currentProject.name} image")
+      img.o-image--b(src="assets/images/#{currentProject.slug}/colours_b4.png", alt="#{currentProject.name} image")
+
+  section.l-wrap
+    .o-twoway
+      .o-twoway__item(class="color--grey")
+        mark.o-mark.t-smallcaps Return
+        a.o-twoway__link(href="index", class="bg--grey")
+          h2.o-twoway__title.t-head--low Back to Homepage
+      .o-twoway__item(class="color--#{nextProject.slug}")
+        mark.o-mark.t-smallcaps Next Project
+        a.o-twoway__link(href="project-#{nextProject.slug}", class="bg--#{nextProject.slug}")
+          h2.o-twoway__title.t-head--low= nextProject.name
+          img.o-twoway__image(src="assets/images/icon_#{nextProject.slug}.jpg", alt="#{nextProject.name} thumbnail")
+
+  footer#contact
+    .l-wrap
+      mark.o-mark.t-smallcaps Contact
+      .m-bottom__col--1
+        p Currently about to finish Master&rsquo;s in Digital design &amp; curious for new opportunities. If I seem like a&nbsp;good fit for your team, please 
+          include partials/_enkoder-mail.html
+          |  &mdash; I&rsquo;ll be happy to discuss possible collaborations.
+      .m-bottom__col--2.l-grid__item--m
+        span.t-small Designed &amp; developed by Christian Jánský, 2015
+      .m-bottom__col--3
+        span.t-smallcaps Thanks for scrolling!
+        p.t-small To see selection of projects I&rsquo;ve made in 2012&thinsp;&ndash;&thinsp;2013, please 
+          a.t-link(href="http://www.chrisjansky.cz/2013/") See my previous portfolio
+          | .

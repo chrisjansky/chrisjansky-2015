@@ -1,0 +1,80 @@
+extends templates/_site
+
+append template-variables
+  - var currentProject = sections[1]
+  - var prevProject = sections[0]
+  - var nextProject = sections[2]
+
+block template-content
+  header.o-header.l-wrap
+    a(href="index").o-logo
+      .o-logo__variant
+        include ../svg/chj_logo_1b.svg
+      .o-logo__variant
+        include ../svg/chj_logo_1a.svg
+      .o-logo__variant
+        include ../svg/chj_logo_1c.svg
+    nav.o-nav#js-nav
+      ul.o-nav__list
+        li.o-nav__item
+          a.o-nav__link.t-link(href="index#section-profile") Profile
+        li.o-nav__item
+          a.o-nav__link.t-link(href="index#section-contact") Contact
+
+  main.o-intro.l-wrap(data-intro)
+    .o-intro__bg(class="bg--#{currentProject.slug}")
+      .o-intro__content
+        h1.o-intro__title.t-head--top= currentProject.name
+        p.o-intro__text!= currentProject.info
+
+  section.l-wrap.l-wrap--horizontal
+    img.o-image--l(src="assets/images/#{currentProject.slug}/notebuuk_l4.jpg", alt="#{currentProject.name} image")
+    .o-row
+      img.o-image--b(src="assets/images/#{currentProject.slug}/notebuuk_m1.jpg", alt="#{currentProject.name} image")
+      img.o-image--b(src="assets/images/#{currentProject.slug}/notebuuk_m2.jpg", alt="#{currentProject.name} image")
+    if currentProject.description
+      .o-description
+        each paragraph in currentProject.description
+          p!= paragraph
+        a.o-button--inline(href="http://www.notebuuk.cz", class="bg--#{currentProject.slug}")
+          span.o-button__text
+            span.o-flash__one View 
+            span.o-flash__two Project Website
+    img.o-image--l(src="assets/images/#{currentProject.slug}/notebuuk_l2.jpg", alt="#{currentProject.name} image")
+    .o-row
+      img.o-image--b(src="assets/images/#{currentProject.slug}/notebuuk_m3.jpg", alt="#{currentProject.name} image")
+      img.o-image--b(src="assets/images/#{currentProject.slug}/notebuuk_m4.jpg", alt="#{currentProject.name} image")
+    img.o-image--l(src="assets/images/#{currentProject.slug}/notebuuk_l3.jpg", alt="#{currentProject.name} image")
+    .o-description
+      p notebuuks also distinguish themselves thanks to details such as blind embossing, round corner die cutting and veneer inlays &mdash; all done by us, in our little studio.
+    .o-row
+      img.o-image--s(src="assets/images/#{currentProject.slug}/notebuuk_m6.jpg", alt="#{currentProject.name} image")
+      img.o-image--m(src="assets/images/#{currentProject.slug}/notebuuk_m5.jpg", alt="#{currentProject.name} image")
+
+  section.l-wrap
+    .o-twoway
+      .o-twoway__item(class="color--#{prevProject.slug}")
+        mark.o-mark.t-smallcaps Previous Project
+        a.o-twoway__link(href="project-#{prevProject.slug}", class="bg--#{prevProject.slug}")
+          h2.o-twoway__title.t-head--low= prevProject.name
+          img.o-twoway__image(src="assets/images/icon_#{prevProject.slug}.jpg", alt="#{prevProject.name} thumbnail")
+      .o-twoway__item(class="color--#{nextProject.slug}")
+        mark.o-mark.t-smallcaps Next Project
+        a.o-twoway__link(href="project-#{nextProject.slug}", class="bg--#{nextProject.slug}")
+          h2.o-twoway__title.t-head--low= nextProject.name
+          img.o-twoway__image(src="assets/images/icon_#{nextProject.slug}.jpg", alt="#{nextProject.name} thumbnail")
+
+  footer#contact
+    .l-wrap
+      mark.o-mark.t-smallcaps Contact
+      .m-bottom__col--1
+        p Currently about to finish Master&rsquo;s in Digital design &amp; curious for new opportunities. If I seem like a&nbsp;good fit for your team, please 
+          include partials/_enkoder-mail.html
+          |  &mdash; I&rsquo;ll be happy to discuss possible collaborations.
+      .m-bottom__col--2.l-grid__item--m
+        span.t-small Designed &amp; developed by Christian Jánský, 2015
+      .m-bottom__col--3
+        span.t-smallcaps Thanks for scrolling!
+        p.t-small To see selection of projects I&rsquo;ve made in 2012&thinsp;&ndash;&thinsp;2013, please 
+          a.t-link(href="http://www.chrisjansky.cz/2013/") See my previous portfolio
+          | .
