@@ -10,7 +10,7 @@
 .m-bottom__col--1 {
   @include shift(4 of $columns__desktop);
 
-  margin-bottom: em($ratio--xh);
+  margin-bottom: em($ratio--xl);
 }
 .m-bottom__col--3 {
   overflow: auto;

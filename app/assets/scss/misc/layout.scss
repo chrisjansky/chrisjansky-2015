@@ -23,3 +23,15 @@
     @include span-columns(10 of $columns__desktop);
   }
 }
+
+.l-spacer {
+  border: none;
+  margin: 0;
+  height: em($ratio--xxl);
+}
+
+.l-col__medium--shift {
+  @include shift(4 of $columns__desktop);
+
+  margin-bottom: flex-gutter();
+}

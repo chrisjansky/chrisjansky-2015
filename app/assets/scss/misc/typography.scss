@@ -1,7 +1,11 @@
 .t-head--top {
-  text-align: center;
-
   font-size: em($ratio--xl);
+  font-family: $font__serif;
+  font-weight: $font__serif--regular;
+}
+
+.t-head--low {
+  font-size: em($ratio--m);
   font-family: $font__serif;
   font-weight: $font__serif--regular;
 }

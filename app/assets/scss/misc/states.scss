@@ -11,4 +11,18 @@ $sections: colours $c-colours $bg-colours, notebuuk $c-notebuuk $bg-notebuuk, bz
       top: $i * 6 + 20%;
     }
   }
+
+  .color--#{nth($section, 1)} {
+    color: nth($section, 2);
+  }
+  .bg--#{nth($section, 1)} {
+    background-color: nth($section, 3);
+  }
+}
+
+.color--grey {
+  color: $grey--700;
+}
+.bg--grey {
+  background-color: $grey--000;
 }
