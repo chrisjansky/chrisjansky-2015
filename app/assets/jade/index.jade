@@ -1,17 +1,20 @@
 extends templates/_site
 
 block template-content
-  header.o-header.l-wrap(data-header)
-    .o-header__content.l-inline
-      .l-inline__cell
-        strong.o-logo CHJ
-      .l-inline__cell
-        nav.o-nav
-          ul.o-nav__list
-            li.o-nav__item
-              a.o-nav__link.t-link(href="#profile") Profile
-            li.o-nav__item
-              a.o-nav__link.t-link(href="#contact") Contact
+  header.o-header.l-wrap
+    a(href="#").o-logo
+      .o-logo__variant
+        include ../svg/chj_logo_1b.svg
+      .o-logo__variant
+        include ../svg/chj_logo_1a.svg
+      .o-logo__variant
+        include ../svg/chj_logo_1c.svg
+    nav.o-nav#js-nav
+      ul.o-nav__list
+        li.o-nav__item
+          a.o-nav__link.t-link(href="#profile", data-scrollto=".425") Profile
+        li.o-nav__item
+          a.o-nav__link.t-link(href="#contact", data-scrollto) Contact
 
   section.o-hero(data-section, data-stamp="Dots, Lines & Semicolons", data-slug="top")
     .o-hero__content.l-wrap
@@ -21,7 +24,7 @@ block template-content
 
   each item, index in sections
     if item.slug == "profile"
-      section(data-section, data-stamp=item.name, data-slug=item.slug)
+      section#profile(data-section, data-stamp=item.claim, data-slug=item.slug)
         mark.o-mark.t-smallcaps Profile
         .m-profile.l-wrap
           .m-profile__col--1.l-grid__item--s
@@ -50,20 +53,24 @@ block template-content
               li.o-list__item--2 GitHub
     else
       mark.o-mark.t-smallcaps= index + 1
-      article.o-work(class="o-work--#{item.slug}", data-section, data-stamp=item.name, data-slug=item.slug)
-        a.o-work__link(href="project-detail")
-          img.o-work__thumb(class="o-work__thumb--#{item.slug}", src="http://unsplash.it/960/600/?image=#{index + 15 * 45}", alt="unsplash.it")
+      article.o-work(class="o-work--#{item.slug}", data-section, data-stamp=item.claim, data-slug=item.slug)
+        a.o-work__link(href="project-#{item.slug}")
+          if item.thumb
+            img.o-work__thumb(class="o-work__thumb--#{item.slug}", src="assets/images/#{item.thumb}", alt="#{item.name} thumbnail")
+          else
+            img.o-work__thumb(class="o-work__thumb--#{item.slug}", src="http://unsplash.it/960/600/?image=#{index + 15 * 45}", alt="unsplash.it")
         .o-work__caption
-          p.o-work__info= item.info
+          p.o-work__info!= item.info
           span.o-work__category.t-smallcaps= item.category
 
-  section(data-section, data-stamp="Let’s Work Together", data-slug="bottom")
-    mark.o-mark.t-smallcaps Contact
+  footer#contact(data-section, data-stamp="Let’s Work Together", data-slug="bottom")
     .l-wrap
+      mark.o-mark.t-smallcaps Contact
       .m-bottom__col--1
-        p Currently about to finish Master&rsquo;s in Digital design, curious for new opportunities. If I seem like a&nbsp;good fit for your team, please 
-          a.t-link(href="#") Get in touch
+        p Currently about to finish Master&rsquo;s in Digital design &amp; curious for new opportunities. If I seem like a&nbsp;good fit for your team, please 
+          include partials/_enkoder-mail.html
           |  &mdash; I&rsquo;ll be happy to discuss possible collaborations.
+      hr.l-spacer
       .m-bottom__col--2.l-grid__item--m
         span.t-small Designed &amp; developed by Christian Jánský, 2015
       .m-bottom__col--3
