@@ -2,37 +2,80 @@
   "sections": [
     {
       "slug": "colours",
+      "claim": "Colourful Ostrava",
       "name": "Colours of Ostrava",
-      "info": "An energetic teaser for this year's music festival.",
-      "category": "Motion Design"
+      "info": "An energetic teaser with viral sensibilities for this year’s Colours of Ostrava — a&nbsp;Czech music festival famous for its unique industrial surroundings.",
+      "description": [
+        "Since the goal was to attract as many people as possible to the festival, I developed a&nbsp;concept of a&nbsp;screencast-like video showing all the fun people can have there, while being one button away from seeing it for themselves.",
+        "The video is staged as inside a&nbsp;social network environment, thus generating a&nbsp;massive traffic to the Colours of Ostrava Facebook page &mdash; people just want to see if the Experience button truly exists!"
+      ],
+      "note": [
+        "This project was commisioned as an experiment, aimed to brainstorm and illustrate possible directions for future festival teasers."
+      ],
+      "category": "Concept, Motion Design",
+      "thumb": "thumb_colours.png"
     },
     {
       "slug": "notebuuk",
-      "name": "Paper is Bliss",
-      "info": "Notebooks done differently.",
-      "category": "Concept, Identity, Web-dev"
+      "claim": "Paper = Awesome",
+      "name": "notebuuk",
+      "info": "An ongoing personal project focusing on alternative approaches to everyday notebooks. How can we make a&nbsp;mundane object exciting again?",
+      "description": [
+        "notebuuk branched out as a&nbsp;continuation of my <a class='t-link' href='http://graduationprojects.eu/en/2013/Christian-Jansky'>award winning graduation project</a> with the intention to transform forgettable notebooks into an unique accessory.",
+        "It is a&nbsp;pure side project that I developed with <a class='t-link' href='http://www.terezacizmarova.cz'>Tereza Čižmárová</a> and serves as a&nbsp;true creative outlet &mdash; we do everything, from sourcing the papers and screen printing to trimming and binding, all ourselves. Talk about complete artistic control!"
+      ],
+      "category": "Concept, Identity, Screen print, Binding, Web-dev",
+      "thumb": "thumb_notebuuk.jpg"
     },
     {
       "slug": "bzenia-web",
-      "name": "Wine at Your Door",
-      "info": "An online store for a craft winery.",
-      "category": "UX, UI, Web-dev"
+      "claim": "Fine Wine Web",
+      "name": "Bzenia Website",
+      "info": "An online store for a&nbsp;small, family owned craft winery known for its 100% organic approach.",
+      "description": [
+        "After the success of <a class='t-link' href='project-bzenia-id'>the bottle redesign</a>, I was approached to improve the digital presence of the winery.",
+        "I had the pleasure of having a&nbsp;lead design role in this project &mdash; besides designing a&nbsp;website with a&nbsp;new, user centric UX and completely developing its front-end, I was also tasked with redesigning the logo and creating a&nbsp;custom icon set reflecting the new sine wave look."
+      ],
+      "note": [
+        "This project was done in a&nbsp;collaboration with <a class='t-link' href='http://www.littlegreta.co.uk'>Little Greta</a>.",
+        "<a class='t-link' href='http://www.cieti.net'>Juraj Kotian</a> is the author of the sine wave concept &mdash; an ingenious visual representation of each individual wine&rsquo;s taste profile."
+      ],
+      "category": "UX, UI, Web-dev",
+      "thumb": "thumb_bzenia-web.jpg"
     },
     {
       "slug": "profile",
-      "name": "Design + Code"
+      "claim": "Design + Code"
     },
     {
       "slug": "little-greta",
-      "name": "A Little but Great Web",
-      "info": "Agency website.",
-      "category": "UX, UI, Web-dev"
+      "claim": "A Little but Great Web",
+      "name": "Little Greta Website",
+      "info": "A complete website overhaul for a&nbsp;Czech creative & digital agency. From concept and paper wireframing to UI design & front-end development.",
+      "description": [
+        "Little Greta asked me to redesign their agency website &mdash; actually a&nbsp;second joint project as I developed their previous site as well. Oh the joy of revisiting your own work and building upon it once more!",
+        "I was responsible for both the design and UX of the website, together with creating a&nbsp;custom icon set. To finish it off, I prototyped and developed the whole front-end architecture and collaborated with Jakub Kříž, who was responsible for back-end matters."
+      ],
+      "note": [
+        "This project was done in a&nbsp;close collaboration with <a class='t-link' href='http://www.littlegreta.co.uk'>Little Greta</a>.",
+        "Back-end finesse by Jakub Kříž."
+      ],
+      "category": "UX, UI, Web-dev",
+      "thumb": "thumb_little-greta.jpg"
     },
     {
       "slug": "bzenia-id",
-      "name": "New Bottle on the Block",
-      "info": "New bottle design.",
-      "category": "Concept, Identity"
+      "claim": "New Bottle on the Block",
+      "name": "Bzenia Identity",
+      "info": "I was approached to design a&nbsp;new look for Bzenia, a&nbsp;truly authentic winery from Moravia, Czech Republic.",
+      "description": [
+        "I was given the opportunity to design a new direction for Bzenia, a small batch wine producer situated in the thriving region of Moravia, Czech Republic. I reflected their progressive &ndash; all organic, no artificial additives &ndash; outlook into the bottle design."
+      ],
+      "note": [
+        "This project was done in a&nbsp;collaboration with <a class='t-link' href='http://www.littlegreta.co.uk'>Little Greta</a>."
+      ],
+      "category": "Concept, Identity",
+      "thumb": "thumb_bzenia-id.jpg"
     }
   ]
 }
