@@ -9,7 +9,12 @@
       "bower_components/normalize-css/normalize.css",
       "app/assets/css/style.css",
       "bower_components/waypoints/lib/jquery.waypoints.js",
-      "app/assets/js/app.js"
+      "bower_components/headroom.js/dist/headroom.js",
+      "bower_components/chj-framework/app/assets/js/chj-base.js",
+      "app/assets/js/app.js",
+      "app/assets/js/chj-scrollto.js",
+      "app/assets/js/chj-headroom.js",
+      "bower_components/chj-framework/app/assets/js/chj-external.js"
     ],
     "vendor": [
     ],
