@@ -11,10 +11,13 @@
       "bower_components/waypoints/lib/jquery.waypoints.js",
       "bower_components/headroom.js/dist/headroom.js",
       "bower_components/chj-framework/app/assets/js/chj-base.js",
+      "bower_components/chj-framework/app/assets/js/chj-external.js",
+      "bower_components/chj-framework/app/assets/js/chj-detect.js",
       "app/assets/js/app.js",
+      "app/assets/js/chj-device.js",
+      "app/assets/js/chj-waypoints.js",
       "app/assets/js/chj-scrollto.js",
-      "app/assets/js/chj-headroom.js",
-      "bower_components/chj-framework/app/assets/js/chj-external.js"
+      "app/assets/js/chj-headroom.js"
     ],
     "vendor": [
     ],
