@@ -24,15 +24,15 @@ block template-content
 
   each item, index in sections
     if item.slug == "profile"
-      section#profile(data-section, data-stamp=item.claim, data-slug=item.slug)
+      section.m-profile#profile(data-section, data-stamp=item.claim, data-slug=item.slug)
         mark.o-mark.t-smallcaps Profile
-        .m-profile.l-wrap
+        .m-profile__content.l-wrap.l-wrap--horizontal
           .m-profile__col--1.l-grid__item--s
-            span About
+            h3.m-profile__title.t-head--lower About
           .m-profile__col--2.l-grid__item--xl
             p I like to combine traditional graphic design with digital interventions and empower it by thoughtful use of motion &amp; interaction. I believe in clarity using means of typography, structure and rhythm. Automation and facilitation of design through clever use of code is something I am deeply passionate about.
           .m-profile__col--3.l-grid__item--m
-            span Key Interests
+            h3.m-profile__title.t-head--lower Key Interests
             ul.o-list
               li UI design
               li Interaction design
@@ -42,7 +42,7 @@ block template-content
               li Wordpress integration
               li DIY Screen printing
           .m-profile__col--4.l-grid__item--m
-            span Favourite Tools
+            h3.m-profile__title.t-head--lower Favourite Tools
             ul.o-list
               li.o-list__item--2 Paper
               li.o-list__item--2 Sketch
@@ -55,6 +55,7 @@ block template-content
       mark.o-mark.t-smallcaps= index + 1
       article.o-work(class="o-work--#{item.slug}", data-section, data-stamp=item.claim, data-slug=item.slug)
         a.o-work__link(href="project-#{item.slug}")
+          h2.o-work__title.t-head--low= item.name
           if item.thumb
             img.o-work__thumb(class="o-work__thumb--#{item.slug}", src="assets/images/#{item.thumb}", alt="#{item.name} thumbnail")
           else
@@ -63,8 +64,8 @@ block template-content
           p.o-work__info!= item.info
           span.o-work__category.t-smallcaps= item.category
 
-  footer#contact(data-section, data-stamp="Let’s Work Together", data-slug="bottom")
-    .l-wrap
+  footer#contact.m-bottom(data-section, data-stamp="Let’s Work Together", data-slug="bottom")
+    .m-bottom__content.l-wrap
       mark.o-mark.t-smallcaps Contact
       .m-bottom__col--1
         p Currently about to finish Master&rsquo;s in Digital design &amp; curious for new opportunities. If I seem like a&nbsp;good fit for your team, please 
