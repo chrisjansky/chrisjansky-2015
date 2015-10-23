@@ -1,5 +1,11 @@
 .o-nav__list {
   @include reset-list;
+
+  @include media($small) {
+    text-align: center;
+
+    margin-top: em($ratio--b);
+  }
 }
 .o-nav__item {
   display: inline-block;
@@ -15,10 +21,7 @@
 .o-logo {
   display: block;
 
-  position: absolute;
-
-  left: 50%;
-  transform: translateX(-50%);
+  @include margin(null auto);
 
   overflow: hidden;
 
@@ -31,6 +34,13 @@
   @include state--active {
     border-bottom: $line--b solid currentColor;
   }
+
+  @include media($large) {
+    position: absolute;
+
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 .o-logo,
 .o-logo__variant {
@@ -39,60 +49,92 @@
 }
 
 .o-stamp {
-  position: fixed;
-  top: 20%;
-  left: 0;
-  right: 0;
-
-  pointer-events: none;
-
   z-index: $index--xl;
 
   transition: top $duration--b;
+
+  @include media($large) {
+    .device--is-desktop & {
+      position: fixed;
+      top: 20%;
+      left: 0;
+      right: 0;
+
+      pointer-events: none;
+    }
+  }
 }
 
 .o-header {
-  @include position(fixed, 0 0 null 0);
-
-  padding-bottom: 0;
-
   z-index: $index--b;
 
   text-align: right;
 
   transition: padding $duration--b;
 
-  .body--scrolled & {
+  @include media($phone) {
+    padding-top: em($ratio--m);
+  }
+
+  @include media($phablet) {
     padding-top: em($ratio--l);
+  }
+
+  @include media($large) {
+    @include position(fixed, 0 0 null 0);
+    padding-bottom: 0;
+
+    .body--scrolled & {
+      padding-top: em($ratio--l);
+    }
   }
 }
 
 .o-work {
   @include clearfix;
 
-  margin-bottom: flex-gutter();
   clear: both;
 
-  @include margin(null em($ratio--xl) em($ratio--xxl));
+  @include margin(null auto);
+  max-width: em($width--xl);
 
-  &:nth-of-type(2) .o-work__link {
-    float: right;
-    margin-right: 0;
+  @include padding(null em($ratio--b) em($unit--h));
+
+  @include media($phablet) {
+    @include padding(null em($ratio--m));
   }
-  &:nth-of-type(3) .o-work__link {
-    @include shift(2);
+  @include media($tablet) {
+    @include padding(null em($ratio--l));
   }
-  &:last-of-type .o-work__link {
-    float: right;
-    margin-right: 0;
+  @include media($desktop) {
+    @include padding(null em($ratio--xl) em($ratio--xxl));
+
+    &:nth-of-type(2) .o-work__link {
+      float: right;
+      margin-right: 0;
+    }
+    &:nth-of-type(3) .o-work__link {
+      @include shift(1 of $columns__desktop);
+    }
+    &:last-of-type .o-work__link {
+      float: right;
+      margin-right: 0;
+    }
   }
 }
 .o-work__link {
   position: relative;
 
-  @include span-columns(8);
+  display: block;
 
-  &:after {
+  text-align: center;
+  text-decoration: none;
+
+  @include media($desktop) {
+    @include span-columns(8 of $columns__desktop);
+  }
+
+  .device--is-desktop &:after {
     @include position(absolute, null 0 em(-$ratio--b) 0);
 
     content: "";
@@ -107,12 +149,33 @@
 }
 .o-work__thumb {
 }
+.o-work__title {
+  display: inline-block;
+
+  border-bottom: $line--b solid;
+
+  @include margin(0 null em($ratio--m));
+
+  .device--is-desktop & {
+    display: none;
+  }
+}
 .o-work__caption {
   overflow: auto;
 
-  .o-work--notebuuk &,
-  .o-work--bzenia-id & {
-    padding-right: em($ratio--l);
+  @include media($phablet) {
+    @include shift(1 of $columns__phablet);
+  }
+  @include media($tablet) {
+    margin-top: em($ratio--m);
+
+    @include shift(2 of $columns__tablet);
+  }
+  @include media($desktop) {
+    .o-work--notebuuk &,
+    .o-work--bzenia-id & {
+      padding-right: em($ratio--l);
+    }
   }
 }
 .o-work__info {
@@ -120,12 +183,25 @@
 
 .o-hero__content {
   text-align: center;
+
+  @include media($large) {
+    .device--is-mobile & {
+      margin-top: 20vh;
+    }
+  }
 }
 .o-hero__text {
-  max-width: em(600);
   @include margin(null auto);
 
-  margin-top: 40vh;
+  max-width: em($width--b);
+
+  @include media($large) {
+    max-width: em($width--m);
+
+    .device--is-desktop & {
+      margin-top: 40vh;
+    }
+  }
 }
 
 .o-mark {
@@ -135,7 +211,11 @@
   display: block;
   text-align: center;
 
-  margin-bottom: em($ratio--xl);
+  margin-bottom: em($ratio--m);
+
+  @include media($large) {
+    margin-bottom: em($ratio--xl);
+  }
 }
 
 .o-list {
@@ -157,74 +237,131 @@
   }
 }
 .o-list__item--2 {
-  @include span-columns(2 of 4);
-  @include omega(2n);
+  @include media($desktop) {
+    @include span-columns(2 of 4);
+    @include omega(2n);
+  }
 }
 
 .o-intro {
-  margin-top: em($ratio--xl);
+  max-width: em($width--xl);
+  
+  @include media($large) {
+    margin-top: em($ratio--xl);
+  }
 }
 .o-intro__bg {
-  position: relative;
-
   text-align: center;
 
-  min-height: 60vh;
-
+  @include media($large) {
+    position: relative;
+  }
+  @include media($tablet) {
+    min-height: 40vh;
+  }
+  @include media($desktop) {
+    min-height: 60vh;
+  }
 }
 .o-intro__content {
-  @include position(absolute, 0 0 0 0);
-  @include pseudo-center--parent;
+  @include media($small) {
+    padding: em($ratio--b);
+  }
+  @include media($large) {
+    @include position(absolute, 0 0 0 0);
+    @include pseudo-center--parent;
+  }
 }
 .o-intro__title {
-  display: inline-block;
+  @include media($large) {
+    display: inline-block;
+  }
 
-  vertical-align: 25%;
+  @include media($tablet) {
+    vertical-align: 75%;
+  }
+  @include media($desktop) {
+    vertical-align: 25%;
+  }
 }
 .o-intro__text {
-  @include position(absolute, null em($ratio--b) em($ratio--l) em($ratio--b));
+  @include media($large) {
+    @include position(absolute, null em($ratio--b) em($ratio--l) em($ratio--b));
+  }
 
   max-width: em(600);
   @include margin(null auto);
 }
 
 [class^="o-image--"],
-[class*=" o-image--"] {
-  margin-bottom: flex-gutter();
+[class*=" o-image--"],
+.o-embed--row {
+  margin-bottom: em($ratio--b);
+
+  @include media($phablet) {
+    margin-bottom: em($ratio--m);
+  }
+  @include media($large) {
+    margin-bottom: flex-gutter();
+  }
 }
+
 .o-image--m {
-  @include span-columns(8 of $columns__desktop);
+  @include media($desktop) {
+    @include span-columns(8 of $columns__desktop);
+  }
 }
 .o-image--m-shift {
-  @include shift(4 of $columns__desktop);
+  @include media($desktop) {
+    @include shift(4 of $columns__desktop);
+  }
 }
 .o-image--b {
-  @include span-columns(6 of $columns__desktop);
+  @include media($desktop) {
+    @include span-columns(6 of $columns__desktop);
+  }
 }
 .o-image--s {
-  @include span-columns(4 of $columns__desktop);
+  @include media($desktop) {
+    @include span-columns(4 of $columns__desktop);
+  }
 }
 
+.o-description,
+.o-note {
+  margin-bottom: em($ratio--b);
+
+  @include media($phablet) {
+    @include shift(1 of $columns__phablet);
+
+    margin-bottom: em($ratio--m);
+  }
+  @include media($large) {
+    margin-bottom: flex-gutter();
+  }
+}
 .o-description {
   clear: both;
-  @include shift(4 of $columns__desktop);
 
-  margin-bottom: flex-gutter();
+  @include media($desktop) {
+    @include shift(4 of $columns__desktop);  
+  }
 }
 .o-note {
   clear: both;
-  @include shift(4 of $columns__desktop);
 
-  width: flex-grid(6, $columns__desktop);
+  @include media($desktop) {
+    width: flex-grid(6, $columns__desktop);
 
-  margin-bottom: flex-gutter();
+    @include shift(4 of $columns__desktop);
+
+    margin-bottom: flex-gutter();
+  }
 }
 
 [class^="o-button--"],
 [class*=" o-button--"] {
   display: block;
-
-  width: flex-grid(4, 8);
 
   text-align: center;
   text-decoration: none;
@@ -237,9 +374,18 @@
       border-bottom: $line--s solid currentColor;
     }
   }
+
+  @include media($desktop) {
+    width: flex-grid(4, 8);
+  }
 }
 .o-button--inline {
-  margin-top: em($ratio--l);
+  @include media($phablet) {
+    margin-top: em($ratio--m);
+  }
+  @include media($large) {
+    margin-top: em($ratio--l);
+  }
 }
 
 .o-flash__one {
@@ -250,7 +396,16 @@
 }
 
 .o-twoway__item {
-  @include span-columns(6 of $columns__desktop);
+  @include media($small) {
+    margin-top: em($ratio--m);
+  }
+  @include media($tablet) {
+    // Shameless hack.
+    @include span-columns(4 of 8);
+  }
+  @include media($desktop) {
+    @include span-columns(6 of $columns__desktop);
+  }
 }
 .o-twoway__link {
   display: block;
@@ -262,13 +417,17 @@
 
   overflow: hidden;
 
-  @include state--active {
-    .o-twoway__image {
-      transform: translateY(25%);
-    }
+  @include padding(null em($ratio--m));
 
-    .o-twoway__title:after {
-      background-color: currentColor;
+  @include state--active {
+    .device--is-desktop & {
+      .o-twoway__image {
+        transform: translateY(25%);
+      }
+
+      .o-twoway__title:after {
+        background-color: currentColor;
+      }
     }
   }
 }
@@ -277,23 +436,58 @@
 
   position: relative;
 
-  @include margin(em($ratio--m) null em($ratio--xxl));
-
   &:after {
     content: "";
 
     @include position(absolute, 100% 0 null 0);
     height: $line--b;
   }
+
+  .device--is-mobile &:after {
+    background-color: currentColor;
+  }
+
+  @include media($large) {
+    @include margin(em($unit--m) null);
+  }
+}
+.o-twoway__shape {
+  background-color: $grey--800;
+
+  @include margin(null auto);
+
+  max-width: em($width--xs);
+
+  @include media($large) {
+    max-width: em($width--s);
+  }
+}
+.o-twoway__ratio {
+  position: relative;
+
+  padding-bottom: 56.25%;
+}
+.o-twoway__glyph {
+  @include position(absolute, 50% 0 null 0);
+
+  transform: translateY(-50%);
+
+  font-size: em($ratio--l);
+
+  animation: flashOne $duration--h infinite alternate;
 }
 .o-twoway__image {
-  @include position(absolute, null 0 0 0);
-  
   @include margin(null auto);
   
-  transform: translateY(70%);
-  
   transition: transform $duration--b;
+
+  .device--is-desktop & {
+    transform: translateY(70%);
+  }
+
+  @include media($small) {
+    max-width: em($width--xs);
+  }
 }
 
 .o-embed {
@@ -307,19 +501,25 @@
     @include size(100%);
   }
 }
-.o-embed--row {
-  margin-bottom: flex-gutter();
-}
 
-.o-device--phone {
-  margin: em($ratio--m);
+.o-device {
+  // Force .o-device margin to collapse.
+  overflow-y: auto;
+
+  padding: em($ratio--m);
+}
+.o-device__phone {
+  @include margin(null auto);
 
   border: $line--b solid currentColor;
   border-radius: em($ratio--l);
-}
-.o-device__image {
+
+  // Accommodate 320px image.
+  max-width: em(380);
 
   padding: em($ratio--xl) em($ratio--b);
+}
+.o-device__image {
 
   @include margin(null auto);
 }

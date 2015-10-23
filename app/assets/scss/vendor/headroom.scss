@@ -3,5 +3,7 @@
 }
 
 .body--scrolled .headroom--unpinned {
-  transform: translateY(em(-$ratio--xl));
+  @include media($large) {
+    transform: translateY(em(-$ratio--xl));
+  }
 }

@@ -1,13 +1,48 @@
 .t-head--top {
-  font-size: em($ratio--xl);
+  font-size: em($ratio--l);
+  line-height: $spacing--s;
+
   font-family: $font__serif;
   font-weight: $font__serif--regular;
+
+  @include media($desktop) {
+    font-size: em($ratio--xl);
+  }
+}
+
+.t-head--high {
+  font-size: em($ratio--m);
+  line-height: $spacing--s;
+
+  font-family: $font__serif;
+  font-weight: $font__serif--regular;
+
+  @include media($tablet) {
+    font-size: em($ratio--l);
+  }
+  @include media($desktop) {
+    font-size: em($ratio--xl);
+  }
 }
 
 .t-head--low {
-  font-size: em($ratio--m);
+  font-size: em($unit--m);
+  
   font-family: $font__serif;
   font-weight: $font__serif--regular;
+
+  @include media($large) {
+    font-size: em($ratio--m);
+  }
+}
+
+.t-head--lower {
+  font-size: em($ratio--b);
+  font-weight: $font__mono--regular;
+
+  @include media($small) {
+    text-align: center;
+  }
 }
 
 .t-small {
@@ -41,13 +76,11 @@ a {
 
     background-color: currentColor;
     opacity: .25;
-
-    transition: top $duration--xs;
   }
+  
   @include state--active {
     &:after {
       opacity: 1;
-      // top: 110%;
     }
   }
 }

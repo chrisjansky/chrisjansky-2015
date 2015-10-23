@@ -1,16 +1,51 @@
-.m-profile__col--2 {
-  margin-right: 0;
+.m-profile {
+  @include margin(null auto);
+  max-width: em($width--xl);
 
   margin-bottom: em($ratio--l);
+
+  @include media($desktop) {
+    margin-bottom: em($ratio--xl);
+  }
+}
+.m-profile__title {
+  @include media($small) {
+    margin-top: em($ratio--l);
+  }
+  @include media($large) {
+    margin-bottom: em($ratio--m)
+  }
+}
+
+.m-profile__col--2 {
+  @include media($large) {
+    margin-right: 0;
+
+    margin-bottom: em($ratio--l);
+  }
 }
 .m-profile__col--3 {
-  @include shift(2 of $columns__desktop);
+  @include media($tablet) {
+    @include shift(2 of $columns__tablet);
+  }
+  @include media($desktop) {
+    @include shift(2 of $columns__desktop);
+  }
 }
 
+.m-project,
+.m-signage,
+.m-bottom {
+  @include margin(null auto);
+  
+  max-width: em($width--xl);
+}
 .m-bottom__col--1 {
-  @include shift(4 of $columns__desktop);
+  @include media($desktop) {
+    @include shift(4 of $columns__desktop);
 
-  margin-bottom: em($ratio--xl);
+    margin-bottom: em($ratio--xl);
+  }
 }
 .m-bottom__col--3 {
   overflow: auto;

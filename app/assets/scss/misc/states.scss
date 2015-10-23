@@ -7,7 +7,7 @@ $sections: colours $c-colours $bg-colours, notebuuk $c-notebuuk $bg-notebuuk, bz
     color: nth($section, 2);
     background-color: nth($section, 3);
 
-    .o-stamp {
+    &.device--is-desktop .o-stamp {
       top: $i * 6 + 20%;
     }
   }
@@ -21,8 +21,11 @@ $sections: colours $c-colours $bg-colours, notebuuk $c-notebuuk $bg-notebuuk, bz
 }
 
 .color--grey {
-  color: $grey--700;
+  color: $grey--400;
+}
+.color--white {
+  color: white;
 }
 .bg--grey {
-  background-color: $grey--000;
+  background-color: $grey--600;
 }

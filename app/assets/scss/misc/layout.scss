@@ -1,14 +1,25 @@
 [class^="l-grid__item--"],
 [class*=" l-grid__item--"] {
-  @include collapse-children;
+  @include media($large) {
+    @include collapse-children;
+  }
 }
 
 .l-grid__item--s {
+  @include media($tablet) {
+    @include span-columns(2 of $columns__tablet);
+  }
   @include media($desktop) {
-    @include span-columns(2);
+    @include span-columns(2 of $columns__desktop);
   }
 }
 .l-grid__item--m {
+  @include media($phablet) {
+    @include span-columns(3 of $columns__phablet);
+  }
+  @include media($tablet) {
+    @include span-columns(3 of $columns__tablet);
+  }
   @include media($desktop) {
     @include span-columns(4 of $columns__desktop);
   }
@@ -19,6 +30,9 @@
   }
 }
 .l-grid__item--xl {
+  @include media($tablet) {
+    @include span-columns(7 of $columns__tablet);
+  }
   @include media($desktop) {
     @include span-columns(10 of $columns__desktop);
   }
@@ -27,7 +41,11 @@
 .l-spacer {
   border: none;
   margin: 0;
-  height: em($ratio--xxl);
+  height: em($ratio--m);
+
+  @include media($large) {
+    height: em($ratio--xxl);
+  }
 }
 
 .l-col__medium--shift {
