@@ -8,6 +8,11 @@
     margin-bottom: em($ratio--xl);
   }
 }
+.m-profile__content {
+  @include media($desktop) {
+    margin-top: em($ratio--h);
+  }
+}
 .m-profile__title {
   @include media($small) {
     margin-top: em($ratio--l);

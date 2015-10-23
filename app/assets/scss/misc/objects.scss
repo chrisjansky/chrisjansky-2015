@@ -421,8 +421,9 @@
 
   @include state--active {
     .device--is-desktop & {
-      .o-twoway__image {
-        transform: translateY(25%);
+      .o-twoway__image,
+      .o-twoway__shape {
+        transform: translateY(0);
       }
 
       .o-twoway__title:after {
@@ -460,6 +461,12 @@
 
   @include media($large) {
     max-width: em($width--s);
+  }
+
+  transition: transform $duration--b;
+
+  .device--is-desktop & {
+    transform: translateY(70%);
   }
 }
 .o-twoway__ratio {
