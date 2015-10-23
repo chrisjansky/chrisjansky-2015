@@ -24,10 +24,10 @@ block template-content
   main.o-intro.l-wrap(data-intro)
     .o-intro__bg(class="bg--#{currentProject.slug}")
       .o-intro__content
-        h1.o-intro__title.t-head--top= currentProject.name
+        h2.o-intro__title.t-head--high= currentProject.name
         p.o-intro__text!= currentProject.info
 
-  section.l-wrap.l-wrap--horizontal
+  section.m-project.l-wrap.l-wrap--horizontal
     img.o-image--l(src="assets/images/#{currentProject.slug}/little-greta_l1.jpg", alt="#{currentProject.name} image")
     .o-row
       img.o-image--s(src="assets/images/#{currentProject.slug}/little-greta_l2.jpg", alt="#{currentProject.name} image")
@@ -42,35 +42,35 @@ block template-content
               span.o-flash__two Live Website
     img.o-image--l(src="assets/images/#{currentProject.slug}/little-greta_l4.jpg", alt="#{currentProject.name} image")
     .o-row
-      .o-image--s(class="bg--#{currentProject.slug}")
-        .o-device--phone
+      .o-device.o-image--s(class="bg--#{currentProject.slug}")
+        .o-device__phone
           img.o-device__image(src="assets/images/#{currentProject.slug}/little-greta_b1.jpg", alt="#{currentProject.name} image")
-      .o-image--s(class="bg--#{currentProject.slug}")
-        .o-device--phone
+      .o-device.o-image--s(class="bg--#{currentProject.slug}")
+        .o-device__phone
           img.o-device__image(src="assets/images/#{currentProject.slug}/little-greta_b4.jpg", alt="#{currentProject.name} image")
-      .o-image--s(class="bg--#{currentProject.slug}")
-        .o-device--phone
+      .o-device.o-image--s(class="bg--#{currentProject.slug}")
+        .o-device__phone
           img.o-device__image(src="assets/images/#{currentProject.slug}/little-greta_b3.jpg", alt="#{currentProject.name} image")
     if currentProject.note
       .o-note
         each note in currentProject.note
           p.t-small!= note
 
-  section.l-wrap
+  section.m-signage.l-wrap
     .o-twoway
       .o-twoway__item(class="color--#{prevProject.slug}")
         mark.o-mark.t-smallcaps Previous Project
         a.o-twoway__link(href="project-#{prevProject.slug}", class="bg--#{prevProject.slug}")
-          h2.o-twoway__title.t-head--low= prevProject.name
+          h3.o-twoway__title.t-head--low= prevProject.name
           img.o-twoway__image(src="assets/images/icon_#{prevProject.slug}.jpg", alt="#{prevProject.name} thumbnail")
       .o-twoway__item(class="color--#{nextProject.slug}")
         mark.o-mark.t-smallcaps Next Project
         a.o-twoway__link(href="project-#{nextProject.slug}", class="bg--#{nextProject.slug}")
-          h2.o-twoway__title.t-head--low= nextProject.name
+          h3.o-twoway__title.t-head--low= nextProject.name
           img.o-twoway__image(src="assets/images/icon_#{nextProject.slug}.jpg", alt="#{nextProject.name} thumbnail")
 
-  footer#contact
-    .l-wrap
+  footer#contact.m-bottom
+    .m-bottom__content.l-wrap
       mark.o-mark.t-smallcaps Contact
       .m-bottom__col--1
         p Currently about to finish Master&rsquo;s in Digital design &amp; curious for new opportunities. If I seem like a&nbsp;good fit for your team, please 

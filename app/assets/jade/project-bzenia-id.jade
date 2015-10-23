@@ -23,10 +23,10 @@ block template-content
   main.o-intro.l-wrap(data-intro)
     .o-intro__bg(class="bg--#{currentProject.slug}")
       .o-intro__content
-        h1.o-intro__title.t-head--top= currentProject.name
+        h2.o-intro__title.t-head--high= currentProject.name
         p.o-intro__text!= currentProject.info
 
-  section.l-wrap.l-wrap--horizontal
+  section.m-project.l-wrap.l-wrap--horizontal
     img.o-image--l(src="assets/images/#{currentProject.slug}/bzenia-id_l1.jpg", alt="#{currentProject.name} image")
     .o-row
       img.o-image--b(src="assets/images/#{currentProject.slug}/bzenia-id_m1b.jpg", alt="#{currentProject.name} image")
@@ -43,20 +43,25 @@ block template-content
         each note in currentProject.note
           p.t-small!= note
 
-  section.l-wrap
+  section.m-signage.l-wrap
     .o-twoway
       .o-twoway__item(class="color--#{prevProject.slug}")
         mark.o-mark.t-smallcaps Previous Project
         a.o-twoway__link(href="project-#{prevProject.slug}", class="bg--#{prevProject.slug}")
-          h2.o-twoway__title.t-head--low= prevProject.name
+          h3.o-twoway__title.t-head--low= prevProject.name
           img.o-twoway__image(src="assets/images/icon_#{prevProject.slug}.jpg", alt="#{prevProject.name} thumbnail")
-      .o-twoway__item(class="color--grey")
-        mark.o-mark.t-smallcaps Return
+      .o-twoway__item(class="color--white")
+        mark.o-mark.t-smallcaps(class="color--grey") Return
         a.o-twoway__link(href="index", class="bg--grey")
-          h2.o-twoway__title.t-head--low Back to Homepage
+          h3.o-twoway__title.t-head--low Back
+          .o-twoway__shape
+            .o-twoway__ratio
+              .o-twoway__glyph
+                span.o-flash__one Ho
+                span.o-flash__two me
 
-  footer#contact
-    .l-wrap
+  footer#contact.m-bottom
+    .m-bottom__content.l-wrap
       mark.o-mark.t-smallcaps Contact
       .m-bottom__col--1
         p Currently about to finish Master&rsquo;s in Digital design &amp; curious for new opportunities. If I seem like a&nbsp;good fit for your team, please 
