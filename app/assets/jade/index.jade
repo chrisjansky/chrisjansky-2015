@@ -1,20 +1,7 @@
 extends templates/_site
 
 block template-content
-  header.o-header.l-wrap
-    a(href="#").o-logo
-      .o-logo__variant
-        include ../svg/chj_logo_1b.svg
-      .o-logo__variant
-        include ../svg/chj_logo_1a.svg
-      .o-logo__variant
-        include ../svg/chj_logo_1c.svg
-    nav.o-nav#js-nav
-      ul.o-nav__list
-        li.o-nav__item
-          a.o-nav__link.t-link(href="#profile", data-scrollto=".425") Profile
-        li.o-nav__item
-          a.o-nav__link.t-link(href="#contact", data-scrollto) Contact
+  +chj-header("home")
 
   section.o-hero(data-section, data-stamp="Dots, Lines & Semicolons", data-slug="top")
     .o-hero__content.l-wrap

@@ -1,0 +1,35 @@
+mixin chj-header(page)
+  if (page === "home")
+    header.o-header.l-wrap
+      a(href="#").o-logo
+        .o-logo__variant
+          include ../../svg/logo_shapes1.svg
+        .o-logo__variant
+          include ../../svg/logo_shapes2.svg
+        .o-logo__variant
+          include ../../svg/logo_shapes3.svg
+        .o-logo__variant
+          include ../../svg/logo_shapes4.svg
+      nav.o-nav#js-nav
+        ul.o-nav__list
+          li.o-nav__item
+            a.o-nav__link.t-link(href="#profile", data-scrollto=".425") Profile
+          li.o-nav__item
+            a.o-nav__link.t-link(href="#contact", data-scrollto) Contact
+  else
+    header.o-header.l-wrap
+      a(href="index").o-logo
+        .o-logo__variant
+          include ../../svg/logo_shapes1.svg
+        .o-logo__variant
+          include ../../svg/logo_shapes2.svg
+        .o-logo__variant
+          include ../../svg/logo_shapes3.svg
+        .o-logo__variant
+          include ../../svg/logo_shapes4.svg
+      nav.o-nav#js-nav
+        ul.o-nav__list
+          li.o-nav__item
+            a.o-nav__link.t-link(href="index#section-profile") Profile
+          li.o-nav__item
+            a.o-nav__link.t-link(href="index#section-contact") Contact

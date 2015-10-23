@@ -5,20 +5,7 @@ append template-variables
   - var prevProject = sections[4]
 
 block template-content
-  header.o-header.l-wrap
-    a(href="index").o-logo
-      .o-logo__variant
-        include ../svg/chj_logo_1b.svg
-      .o-logo__variant
-        include ../svg/chj_logo_1a.svg
-      .o-logo__variant
-        include ../svg/chj_logo_1c.svg
-    nav.o-nav#js-nav
-      ul.o-nav__list
-        li.o-nav__item
-          a.o-nav__link.t-link(href="index#section-profile") Profile
-        li.o-nav__item
-          a.o-nav__link.t-link(href="index#section-contact") Contact
+  +chj-header("subpage")
 
   main.o-intro.l-wrap(data-intro)
     .o-intro__bg(class="bg--#{currentProject.slug}")

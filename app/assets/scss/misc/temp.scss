@@ -1,13 +1,13 @@
 .o-logo__variant:first-child {
-  animation: logoMove $duration--xxl steps(2) infinite alternate;
+  animation: logoMove $duration--h steps(3) infinite alternate;
 }
 
 @keyframes logoMove {
-  0%, 100% {
+  0% {
     margin-top: 0;
   }
-  50% {
-    margin-top: -64px;
+  75% {
+    margin-top: -120px;
   }
 }
 
