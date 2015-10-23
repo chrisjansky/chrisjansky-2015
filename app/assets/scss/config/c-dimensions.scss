@@ -1,9 +1,10 @@
 // Widths
-$width--xl: 800;
+$width--xl: 1400;
 $width--l:  740;
-$width--m:  560;
-$width--b:  400;
-$width--s:  220;
+$width--m:  600;
+$width--b:  480;
+$width--s:  320;
+$width--xs: 240;
 
 // Heights
 $height--l: round(modular-scale(1, $unit--b * $spacing--l, $multiplier-1));
